@@ -1,0 +1,21 @@
+<html>
+  <head>
+    <title>Customer Directory</title>
+  </head>
+  <body>
+    <nav><a href="/">Home</a> | <a href="/customers">Customers</a></nav>
+    <hr />
+
+    <h1>Customer Directory</h1>
+    <ul>
+      {{#each customers}}
+        <li>
+          <a href="/customer/{{this.id}}"><strong>{{this.name}}</strong></a>
+          —
+          {{this.city}}
+          ({{this.email}})
+        </li>
+      {{/each}}
+    </ul>
+  </body>
+</html>

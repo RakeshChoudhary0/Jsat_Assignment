@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Customer Details</title>
+</head>
+<body>
+  <nav><a href="/">Home</a> | <a href="/customers">Customers</a></nav>
+  <hr>
+
+  <h1>Customer Details</h1>
+  <p><strong>Customer ID:</strong> {{customer.id}}</p>
+  <p><strong>Name:</strong> {{customer.name}}</p>
+  <p><strong>Email:</strong> {{customer.email}}</p>
+  <p><strong>Phone:</strong> {{customer.phone}}</p>
+  <p><strong>City:</strong> {{customer.city}}</p>
+  <p><strong>Member Since:</strong> {{customer.joinDate}}</p>
+
+  <p><a href="/account/{{customer.accountNo}}">View Associated Account</a></p>
+  <a href="/customers">← Back to Directory</a>
+</body>
+</html>

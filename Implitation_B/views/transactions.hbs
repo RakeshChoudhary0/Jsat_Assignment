@@ -1,0 +1,45 @@
+<html>
+  <head>
+    <title>Account Transactions</title>
+  </head>
+  <body>
+    <nav><a href="/">Home</a> | <a href="/customers">Customers</a></nav>
+    <hr />
+
+    <h1>Transactions for Account: {{accountNo}}</h1>
+
+    {{#if hasTransactions}}
+      <table border="1" cellpadding="6" cellspacing="0">
+        <thead>
+          <tr style="background-color: #f0f0f0;">
+            <th>Txn ID</th>
+            <th>Timestamp</th>
+            <th>Type</th>
+            <th>From</th>
+            <th>To</th>
+            <th>Amount</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{#each transactions}}
+            <tr>
+              <td>{{this.id}}</td>
+              <td>{{this.timestamp}}</td>
+              <td>{{this.type}}</td>
+              <td>{{this.from}}</td>
+              <td>{{this.to}}</td>
+              <td>${{this.amount}}</td>
+              <td>{{this.description}}</td>
+            </tr>
+          {{/each}}
+        </tbody>
+      </table>
+    {{else}}
+      <p>No transaction history recorded for this account.</p>
+    {{/if}}
+
+    <br />
+    <a href="/account/{{accountNo}}">← Back to Account Details</a>
+  </body>
+</html>

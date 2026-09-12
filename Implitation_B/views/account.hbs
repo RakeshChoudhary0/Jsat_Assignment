@@ -1,0 +1,23 @@
+<html>
+  <head>
+    <title>Account Details</title>
+  </head>
+  <body>
+    <nav><a href="/">Home</a> | <a href="/customers">Customers</a></nav>
+    <hr />
+
+    <h1>Account Details</h1>
+    <p><strong>Account Number:</strong> {{account.accountNo}}</p>
+    <p><strong>Account Holder:</strong>
+      <a href="/customer/{{customer.id}}">{{customer.name}}</a></p>
+    <p><strong>Account Type:</strong> {{account.type}}</p>
+    <p><strong>Current Balance:</strong>
+      ${{account.balance}}
+      {{account.currency}}</p>
+    <p><strong>Branch Location:</strong> {{account.branch}}</p>
+    <p><strong>Account Status:</strong> {{account.status}}</p>
+
+    <p><a href="/transactions/{{account.accountNo}}">View Transaction History</a></p>
+    <a href="/customers">← Back to Directory</a>
+  </body>
+</html>
